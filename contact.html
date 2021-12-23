@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" href="./style/style-home.css" />
+    <link rel="stylesheet" href="./style/style-contact.css" />
 
     <!-- SEO -->
     <!-- Primary Meta Tags -->
@@ -57,71 +57,58 @@
           <label for="checkbox_toggle" class="hamburger">&#9776;</label>
           <!-- NAVIGATION MENUS -->
           <div class="menu">
-            <li class="active"><a href="./index.html">Home</a></li>
+            <li><a href="./index.html">Home</a></li>
             <li><a href="./gallery.html">Gallery</a></li>
             <li><a href="./reservation.html">Reservation</a></li>
-            <li><a href="./contact.html">Contact us</a></li>
+            <li class="active"><a href="./contact.html">Contact us</a></li>
           </div>
         </ul>
       </nav>
     </header>
     <main>
-      <section id="hero">
-        <div class="hero-card">
-          <h1>RentMeNow</h1>
-          <p>
-            Rent your new car or motorcycle today with ease and start a new
-            adventure! price starts at as low as 10$ per day.
-          </p>
-          <button><a href="./reservation.html">Reserver Maintenant!</a></button>
-        </div>
-        <div class="mouse_scroll">
-          <div class="mouse">
-            <div class="wheel"></div>
-          </div>
-          <div>
-            <span class="m_scroll_arrows unu"></span>
-            <span class="m_scroll_arrows doi"></span>
-            <span class="m_scroll_arrows trei"></span>
-          </div>
-        </div>
-      </section>
-      <section id="gallery">
-        <h2>Gallery</h2>
-        <div class="images">
-          <div class="image">
-            <figure>
-              <img
-                src="https://images.pexels.com/photos/193991/pexels-photo-193991.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260"
-                alt="Gray Mercedes-benz Convertible"
-              />
-              <figcaption>Gray Mercedes-benz Convertible</figcaption>
-            </figure>
-          </div>
-          <div class="image">
-            <figure>
-              <img
-                src="https://images.pexels.com/photos/1007410/pexels-photo-1007410.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-                alt="Grey Ford Focus Hatchback"
-              />
-              <figcaption>Grey Ford Focus Hatchback</figcaption>
-            </figure>
-          </div>
-          <div class="image">
-            <figure>
-              <img
-                src="https://images.pexels.com/photos/1638459/pexels-photo-1638459.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940"
-                alt="Red Jeep Wrangler Suv on Outdoors"
-              />
-              <figcaption>Red Jeep Wrangler Suv on Outdoors</figcaption>
-            </figure>
-          </div>
-        </div>
-        <button><a href="./gallery.html">See More...</a></button>
-      </section>
       <section id="contact_us">
-        <h2>Have any questions or issues?</h2>
-        <button><a href="./contact-us.html">Contact us now!</a></button>
+        <div class="contact-left">
+          <h2>Have any questions or issues?</h2>
+        <p>
+          We are always happy to help you. Please fill out the form below and we
+          will get back to you as soon as possible.
+        </p>
+        </div>
+        <div class="contact-right">
+          <form>
+            <div class="form-group">
+              <label for="name">Name</label>
+              <input
+                type="text"
+                name="name"
+                id="name"
+                placeholder="Enter your name"
+              />
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input
+                type="email"
+                name="email"
+                id="email"
+                placeholder="Enter your email"
+              />
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea
+                name="message"
+                id="message"
+                cols="30"
+                rows="10"
+                placeholder="Enter your message"
+              ></textarea>
+            </div>
+            <div class="form-group">
+              <button type="submit" name="submit">Send</button>
+            </div>
+          </form>
+        </div>
       </section>
     </main>
     <footer>
@@ -137,10 +124,10 @@
         <h3>Links</h3>
         <nav>
           <ul>
-            <li class="active"><a href="./index.html">Home</a></li>
+            <li><a href="./index.html">Home</a></li>
             <li><a href="./gallery.html">Gallery</a></li>
             <li><a href="./reservation.html">Reservation</a></li>
-            <li><a href="./contact.html">Contact us</a></li>
+            <li class="active"><a href="./contact.html">Contact us</a></li>
           </ul>
         </nav>
       </div>

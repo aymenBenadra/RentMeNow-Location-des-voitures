@@ -1,0 +1,22 @@
+footer {
+  background-color: $primary-color;
+  padding: 20px;
+  text-align: center;
+  font-size: 14px;
+  color: white;
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-items: flex-start;
+
+  .footer-left {
+    width: 50%;
+    min-width: 300px;
+    text-align: left;
+  }
+
+  * {
+    margin: 10px 0;
+  }
+}

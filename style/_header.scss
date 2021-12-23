@@ -1,0 +1,81 @@
+header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+/* NAVBAR STYLING STARTS */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 12vh;
+  padding: 20px;
+  background-color: $primary-color;
+  color: #fff;
+  transition: all 1s ease;
+}
+/* LOGO */
+.logo {
+  font-size: 32px;
+}
+/* NAVBAR MENU */
+.menu {
+  display: flex;
+  gap: 1em;
+  font-size: 18px;
+
+  li {
+    padding: 5px 14px;
+
+    &:hover {
+      background-color: $secondary-color;
+      border-radius: 5px;
+      transition: 0.3s ease;
+    }
+  }
+}
+
+.active {
+  background-color: $secondary-color;
+  border-radius: 5px;
+}
+
+/*RESPONSIVE NAVBAR MENU STARTS*/
+/* CHECKBOX HACK */
+input[type="checkbox"] {
+  display: none;
+}
+/*HAMBURGER MENU*/
+.hamburger {
+  display: none;
+  font-size: 24px;
+  user-select: none;
+}
+/* APPLYING MEDIA QUERIES */
+@media (max-width: 768px) {
+  .menu {
+    display: none;
+    position: absolute;
+    background-color: $primary-color;
+    right: 0;
+    left: 0;
+    text-align: center;
+    padding: 16px 0;
+
+    li:hover {
+      display: inline-block;
+      background-color: $secondary-color;
+      transition: 0.3s ease;
+    }
+    li + li {
+      margin-top: 12px;
+    }
+  }
+  input[type="checkbox"]:checked ~ .menu {
+    display: block;
+  }
+  .hamburger {
+    display: block;
+  }
+}
