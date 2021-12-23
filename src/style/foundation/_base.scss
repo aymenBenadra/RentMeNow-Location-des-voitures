@@ -1,5 +1,5 @@
 /* UTILITIES */
-$primary-color: teal;
+$primary-color: #008080;
 $secondary-color: #4c9e9e;
 
 *,
@@ -23,6 +23,7 @@ button {
   border: none;
   outline: none;
   font-size: large;
+  color: white;
 
   padding: 5px 14px;
   background-color: $primary-color;
