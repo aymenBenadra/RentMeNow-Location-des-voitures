@@ -1,10 +1,8 @@
 // Contact form Submission
-const send = document.querySelector("#send");
 const form = document.querySelector("#contact-form");
 
-send.addEventListener("click", (event) => {
+form.addEventListener("submit", (event) => {
   event.preventDefault();
-
   const data = {
     name: document.querySelector("#name").value,
     email: document.querySelector("#email").value,
@@ -19,7 +17,7 @@ send.addEventListener("click", (event) => {
       data.email +
       (data.message ? "<br />Message: " + data.message : ""),
     "success"
-  );
-  
-  form.submit();
+  ).then(() => {
+    form.submit();
+  });
 });

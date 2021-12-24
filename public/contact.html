@@ -75,7 +75,11 @@
           </p>
         </div>
         <div class="contact-right">
-          <form id="contact-form" netlify>
+          <form
+            id="contact-form"
+            data-netlify-recaptcha="true"
+            data-netlify="true"
+          >
             <div class="form-group">
               <label for="name">Name</label>
               <input
@@ -104,10 +108,12 @@
                 cols="30"
                 rows="10"
                 placeholder="Enter your message"
+                required
               ></textarea>
             </div>
+            <div data-netlify-recaptcha="true"></div>
             <div class="form-group">
-              <button type="button" id="send">Send</button>
+              <button type="submit">Send</button>
             </div>
           </form>
         </div>
