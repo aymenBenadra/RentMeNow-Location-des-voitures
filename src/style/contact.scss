@@ -1,6 +1,6 @@
-@import "../foundation/base";
-@import "../foundation/header";
-@import "../foundation/footer";
+@import "./base";
+@import "./components/header";
+@import "./components/footer";
 
 #contact_us {
   display: flex;

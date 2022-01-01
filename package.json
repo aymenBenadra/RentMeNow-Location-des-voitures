@@ -20,6 +20,7 @@
     "plugins": []
   },
   "scripts": {
-    "babel": "babel src/js/main.js -o public/js/main.min.js"
-  }
+    "babel": "babel src/js/main.js -o public/js/main.min.js --watch"
+  },
+  "dependencies": {}
 }

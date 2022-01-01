@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="stylesheet" href="./css/home.min.css" />
+    <link rel="stylesheet" href="./css/gallery.min.css" />
 
     <!-- Favicon -->
     <link
@@ -89,8 +89,8 @@
           <label for="checkbox_toggle" class="hamburger">&#9776;</label>
           <!-- NAVIGATION MENUS -->
           <div class="menu">
-            <li class="active"><a href="./index.html">Home</a></li>
-            <li><a href="./gallery.html">Gallery</a></li>
+            <li><a href="./index.html">Home</a></li>
+            <li class="active"><a href="./gallery.html">Gallery</a></li>
             <li><a href="./reservation.html">Reservation</a></li>
             <li><a href="./contact.html">Contact us</a></li>
           </div>
@@ -98,36 +98,9 @@
       </nav>
     </header>
     <main>
-      <section id="hero">
-        <div class="hero-card">
-          <h1>RentMeNow</h1>
-          <p>
-            Rent your new car or motorcycle today with ease and start a new
-            adventure! price starts at as low as 10$ per day.
-          </p>
-          <button><a href="./reservation.html">Reserver Maintenant!</a></button>
-        </div>
-        <div class="mouse_scroll">
-          <div class="mouse">
-            <div class="wheel"></div>
-          </div>
-          <div>
-            <span class="m_scroll_arrows unu"></span>
-            <span class="m_scroll_arrows doi"></span>
-            <span class="m_scroll_arrows trei"></span>
-          </div>
-        </div>
-      </section>
       <section id="gallery">
         <h2>Gallery</h2>
-        <div class="cars" id="home-gallery-cars"></div>
-        <button><a href="./gallery.html">See More...</a></button>
-      </section>
-      <section id="contact_us">
-        <h2 class="pattern-checks-sm bg-mint white text-pattern">
-          Have any questions or issues?
-        </h2>
-        <button><a href="./contact.html">Contact us now!</a></button>
+        <div class="cars"></div>
       </section>
     </main>
     <footer>
@@ -143,14 +116,17 @@
         <h3>Links</h3>
         <nav>
           <ul>
-            <li class="active"><a href="./index.html">Home</a></li>
-            <li><a href="./gallery.html">Gallery</a></li>
+            <li><a href="./index.html">Home</a></li>
+            <li class="active"><a href="./gallery.html">Gallery</a></li>
             <li><a href="./reservation.html">Reservation</a></li>
             <li><a href="./contact.html">Contact us</a></li>
           </ul>
         </nav>
       </div>
     </footer>
+
+    <!--- Sweet Alert 2 CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.3.0/dist/sweetalert2.all.min.js"></script>
     <script src="./js/main.min.js"></script>
   </body>
 </html>
