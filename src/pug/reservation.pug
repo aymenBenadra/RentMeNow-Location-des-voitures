@@ -17,7 +17,7 @@ block content
             | Calculate how much you have to pay for an awesome car or motorcycle.
             | We will help you to find the best price for you.
         .reservation-form
-            form(data-netlify='true')
+            form#reservation-form(data-netlify='true')
                 .form-group
                     label(for='vehicles') Vehicles
                     select#vehicles(name='vehicles' autofocus required)
@@ -61,3 +61,6 @@ block active-footer
         a(href='./reservation.html') Reservation
     li
         a(href='./contact.html') Contact us
+
+block scripts
+    script(src='./js/reservation.min.js')
