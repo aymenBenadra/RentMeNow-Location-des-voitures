@@ -64,3 +64,20 @@ function createCar(car) {
 
   return carDiv;
 }
+
+// Reservation page
+const reservation = document.querySelector("#reservation");
+const bav = document.getElementsByName("bav");
+
+// if checkbox is checked, uncheck the other
+bav.forEach((b) => {
+  b.addEventListener("click", (event) => {
+    if (event.target.checked) {
+      bav.forEach((b) => {
+        if (b.id != event.target.id) b.checked = false;
+      });
+    }
+  });
+});
+
+//
