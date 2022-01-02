@@ -13,11 +13,15 @@ block active-header
 block content
     section#reservation
         h2 Reservation 
+        p
+            | Calculate how much you have to pay for an awesome car or motorcycle.
+            | We will help you to find the best price for you.
         .reservation-form
             form(data-netlify='true')
                 .form-group
                     label(for='vehicles') Vehicles
                     select#vehicles(name='vehicles' autofocus required)
+                        option(value='--') Select a vehicle
                         option(value='moto') Moto
                         option(value='citadine') Citadine
                         option(value='compact') Compact
@@ -28,19 +32,25 @@ block content
                 .form-group
                     fieldset
                         legend Boite de Vitesse
-                        input#manuelle(type='checkbox' name='bav')
-                        label(for='manuelle') Manuelle
-                        input#auto(type='checkbox' name='bav')
-                        label(for='auto') Automatique
+                        .checkbox
+                            input#manuelle(type='checkbox' name='bav' value='manuelle')
+                            label(for='manuelle') Manuelle
+                        .checkbox
+                            input#auto(type='checkbox' name='bav' value='auto')
+                            label(for='auto') Automatique
                 .form-group
-                    label(for='phone') Phone
-                    input#phone(type='text' name='phone' placeholder='Enter your phone' required='')
-                .form-group
-                    label(for='message') Message
-                    textarea#message(name='message' cols='30' rows='10' placeholder='Enter your message' required='')
-                .form-verify(data-netlify-recaptcha='true')
-                .form-group
-                    button(type='submit') Send
+                    label(for='moteur') Moteur
+                    select#moteur(name='moteur' autofocus)
+                        option(value='--') Select a moteur
+                        option(value='electrique') Electrique
+                        option(value='hybride') Hybride
+                        option(value='essence') Essence
+                        option(value='diesel') Diesel
+                .form-group.prix
+                    label(for='prix') Estimation prix
+                    .input-group
+                        input#prix(type='text' name='phone' placeholder='0,00' disabled)
+                        span €
 
 block active-footer
     li
