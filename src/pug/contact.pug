@@ -1,0 +1,56 @@
+extend ./template.pug
+
+block active-header
+    li
+        a(href='./index.html') Home
+    li
+        a(href='./gallery.html') Gallery
+    li
+        a(href='./reservation.html') Reservation
+    li.active
+        a(href='./contact.html') Contact us
+
+block content
+    section#contact
+        .contact-left
+            h2 Have any questions or issues?
+            p
+                | We are always happy to help you. Please fill out the form below and
+                | we will get back to you as soon as possible.
+        .contact-right
+            form#contact-form(data-netlify-recaptcha='true' data-netlify='true')
+                .form-group
+                    label(for='name') Name
+                    input#name(type='text' name='name' placeholder='Enter your name' required)
+                .form-group
+                    label(for='email') Email
+                    input#email(type='email' name='email' placeholder='Enter your email' required)
+                .form-group
+                    label(for='message') Message
+                    textarea#message(name='message' cols='30' rows='10' placeholder='Enter your message' required)
+                .form-verify(data-netlify-recaptcha='true' required)
+                .form-group
+                    button(type='submit') Send
+
+block active-footer
+    li
+        a(href='./index.html') Home
+    li
+        a(href='./gallery.html') Gallery
+    li
+        a(href='./reservation.html') Reservation
+    li.active
+        a(href='./contact.html') Contact us
+
+block prepend scripts
+    script(src="https://cdn.jsdelivr.net/npm/sweetalert2@11.3.0/dist/sweetalert2.all.min.js")
+
+
+
+
+
+
+
+
+
+

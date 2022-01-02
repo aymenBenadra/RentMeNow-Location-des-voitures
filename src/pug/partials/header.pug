@@ -1,0 +1,21 @@
+header
+  nav.navbar
+    // LOGO
+    .logo
+      a(href='./index.html') RentMeNow
+    // NAVIGATION MENU
+    ul.nav-links
+      // USING CHECKBOX HACK
+      input#checkbox_toggle(type='checkbox')
+      label.hamburger(for='checkbox_toggle') &#x2630;
+      // NAVIGATION MENUS
+      .menu
+        block active-header
+          li.active
+            a(href='./index.html') Home
+          li
+            a(href='./gallery.html') Gallery
+          li
+            a(href='./reservation.html') Reservation
+          li
+            a(href='./contact.html') Contact us

@@ -1,0 +1,26 @@
+extend ./template.pug
+
+block active-header
+    li
+        a(href='./index.html') Home
+    li.active
+        a(href='./gallery.html') Gallery
+    li
+        a(href='./reservation.html') Reservation
+    li
+        a(href='./contact.html') Contact us
+
+block content
+    section#gallery
+        h2 Gallery
+        .cars
+
+block active-footer
+    li
+        a(href='./index.html') Home
+    li.active
+        a(href='./gallery.html') Gallery
+    li
+        a(href='./reservation.html') Reservation
+    li
+        a(href='./contact.html') Contact us

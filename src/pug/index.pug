@@ -1,0 +1,28 @@
+extend ./template.pug
+
+block content
+    section#hero
+        .hero-card
+            h1 RentMeNow
+            p
+                | Rent your new car or motorcycle today with ease and start a new
+                | adventure! price starts at as low as 10$ per day.
+            button
+                a(href='./reservation.html') Reserver Maintenant!
+        .mouse_scroll
+            .mouse
+                .wheel
+            div
+                span.m_scroll_arrows.unu
+                span.m_scroll_arrows.doi
+                span.m_scroll_arrows.trei
+    section#gallery
+        h2 Gallery
+        #home-gallery-cars.cars
+        button
+            a(href='./gallery.html') See More...
+    section#contact_us
+        h2.pattern-checks-sm.bg-mint.white.text-pattern
+            | Have any questions or issues?
+        button
+            a(href='./contact.html') Contact us now!

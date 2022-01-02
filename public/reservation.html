@@ -45,39 +45,54 @@
           <label class="hamburger" for="checkbox_toggle">&#x2630;</label>
           <!-- NAVIGATION MENUS-->
           <div class="menu">
-            <li class="active"><a href="./index.html">Home</a></li>
+            <li><a href="./index.html">Home</a></li>
             <li><a href="./gallery.html">Gallery</a></li>
-            <li><a href="./reservation.html">Reservation</a></li>
+            <li class="active"><a href="./reservation.html">Reservation</a></li>
             <li><a href="./contact.html">Contact us</a></li>
           </div>
         </ul>
       </nav>
     </header>
     <main>
-      <section id="hero">
-        <div class="hero-card">
-          <h1>RentMeNow</h1>
-          <p>
-            Rent your new car or motorcycle today with ease and start a new
-            adventure! price starts at as low as 10$ per day.
-          </p>
-          <button><a href="./reservation.html">Reserver Maintenant!</a></button>
+      <section id="reservation">
+        <h2>Reservation </h2>
+        <div class="reservation-form">
+          <form data-netlify="true">
+            <div class="form-group">
+              <label for="vehicles">Vehicles</label>
+              <select id="vehicles" name="vehicles" autofocus required>
+                <option value="moto">Moto</option>
+                <option value="citadine">Citadine</option>
+                <option value="compact">Compact</option>
+                <option value="berline">Berline</option>
+                <option value="utilitaire">Utilitaire</option>
+                <option value="chantier">Engin de Chantier</option>
+                <option value="camion">Camion</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <fieldset>
+                <legend>Boite de Vitesse</legend>
+                <input id="manuelle" type="checkbox" name="bav">
+                <label for="manuelle">Manuelle</label>
+                <input id="auto" type="checkbox" name="bav">
+                <label for="auto">Automatique</label>
+              </fieldset>
+            </div>
+            <div class="form-group">
+              <label for="phone">Phone</label>
+              <input id="phone" type="text" name="phone" placeholder="Enter your phone" required="">
+            </div>
+            <div class="form-group">
+              <label for="message">Message</label>
+              <textarea id="message" name="message" cols="30" rows="10" placeholder="Enter your message" required=""></textarea>
+            </div>
+            <div class="form-verify" data-netlify-recaptcha="true"></div>
+            <div class="form-group">
+              <button type="submit">Send</button>
+            </div>
+          </form>
         </div>
-        <div class="mouse_scroll">
-          <div class="mouse">
-            <div class="wheel"></div>
-          </div>
-          <div><span class="m_scroll_arrows unu"></span><span class="m_scroll_arrows doi"></span><span class="m_scroll_arrows trei"></span></div>
-        </div>
-      </section>
-      <section id="gallery">
-        <h2>Gallery</h2>
-        <div class="cars" id="home-gallery-cars"></div>
-        <button><a href="./gallery.html">See More...</a></button>
-      </section>
-      <section id="contact_us">
-        <h2 class="pattern-checks-sm bg-mint white text-pattern">Have any questions or issues?</h2>
-        <button><a href="./contact.html">Contact us now!</a></button>
       </section>
     </main>
     <footer>
@@ -93,9 +108,9 @@
         <h3>Links</h3>
         <nav>
           <ul>
-            <li class="active"><a href="./index.html">Home</a></li>
+            <li><a href="./index.html">Home</a></li>
             <li><a href="./gallery.html">Gallery</a></li>
-            <li><a href="./reservation.html">Reservation</a></li>
+            <li class="active"><a href="./reservation.html">Reservation</a></li>
             <li><a href="./contact.html">Contact us</a></li>
           </ul>
         </nav>
