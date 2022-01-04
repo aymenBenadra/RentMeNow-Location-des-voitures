@@ -33,19 +33,22 @@ block content
                     fieldset
                         legend Boite de Vitesse
                         .checkbox
-                            input#manuelle(type='checkbox' name='bav' value='manuelle')
+                            input#manuelle(type='checkbox' name='bav' value='manuelle' disabled)
                             label(for='manuelle') Manuelle
                         .checkbox
-                            input#auto(type='checkbox' name='bav' value='auto')
+                            input#auto(type='checkbox' name='bav' value='auto' disabled)
                             label(for='auto') Automatique
                 .form-group
                     label(for='moteur') Moteur
                     select#moteur(name='moteur' autofocus)
                         option(value='--') Select a moteur
-                        option(value='electrique') Electrique
-                        option(value='hybride') Hybride
-                        option(value='essence') Essence
-                        option(value='diesel') Diesel
+                        option(value='electrique' disabled) Electrique
+                        option(value='hybride' disabled) Hybride
+                        option(value='essence' disabled) Essence
+                        option(value='diesel' disabled) Diesel
+                .form-group 
+                    label(for='jours') Number des jours
+                    input#jours(type='number' name='jours' min='1' max='365' value="1" disabled required)
                 .form-group.prix
                     label(for='prix') Estimation prix
                     .input-group
