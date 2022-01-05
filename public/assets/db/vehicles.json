@@ -1,44 +1,52 @@
-[
-  {
-    "type": "moto",
-    "bav": "",
-    "moteur": ["electrique", "essence"],
-    "tarif": 10
+{
+  "moteurTTC":{
+    "electrique": 0.05,
+    "hybride": 0.09,
+    "essence": 0.14,
+    "diesel": 0.21
   },
-  {
-    "type": "citadine",
-    "bav": "manuelle",
-    "moteur": ["electrique", "hybride", "essence", "diesel"],
-    "tarif": 12
-  },
-  {
-    "type": "compact",
-    "bav": "manuelle",
-    "moteur": ["essence", "hybride", "diesel"],
-    "tarif": 14
-  },
-  {
-    "type": "berline",
-    "bav": "auto",
-    "moteur": ["hybride", "essence", "diesel"],
-    "tarif": 20
-  },
-  {
-    "type": "utilitaire",
-    "bav": "manuelle",
-    "moteur": ["diesel"],
-    "tarif": 16
-  },
-  {
-    "type": "chantier",
-    "bav": "manuelle",
-    "moteur": ["essence", "diesel"],
-    "tarif": 900
-  },
-  {
-    "type": "camion",
-    "bav": "auto",
-    "moteur": ["diesel"],
-    "tarif": 250
-  }
-]
+  "vehicles":[
+    {
+      "type": "moto",
+      "bav": "",
+      "moteur": ["electrique", "essence"],
+      "tarif": 10
+    },
+    {
+      "type": "citadine",
+      "bav": "manuelle",
+      "moteur": ["electrique", "hybride", "essence", "diesel"],
+      "tarif": 12
+    },
+    {
+      "type": "compact",
+      "bav": "manuelle",
+      "moteur": ["essence", "hybride", "diesel"],
+      "tarif": 14
+    },
+    {
+      "type": "berline",
+      "bav": "auto",
+      "moteur": ["hybride", "essence", "diesel"],
+      "tarif": 20
+    },
+    {
+      "type": "utilitaire",
+      "bav": "manuelle",
+      "moteur": ["diesel"],
+      "tarif": 16
+    },
+    {
+      "type": "chantier",
+      "bav": "manuelle",
+      "moteur": ["essence", "diesel"],
+      "tarif": 900
+    },
+    {
+      "type": "camion",
+      "bav": "auto",
+      "moteur": ["diesel"],
+      "tarif": 250
+    }
+  ]
+}

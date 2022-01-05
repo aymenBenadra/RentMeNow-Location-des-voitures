@@ -35,4 +35,8 @@ button {
     border-radius: 5px;
     transition: 0.3s ease;
   }
+
+  &:disabled {
+    background-color: $secondary-color;
+  }
 }
