@@ -22,8 +22,8 @@ fetch("./assets/db/vehicles.json")
 // Render Data
 function renderData(data) {
   const vehiclesData = data["vehicles"];
-  let vehicleData;
   const moteurTTC = data["moteurTTC"];
+  let vehicleData;
 
   vehicles.addEventListener("change", (event) => {
     // Reset Form
@@ -36,6 +36,7 @@ function renderData(data) {
       jours.value = 1;
       jours.disabled = true;
       printButton.disabled = true;
+      rebriquePrix.value = "";
     } else {
       // Find selected vehicle data
       vehicleData = vehiclesData.filter((v) => v.type == event.target.value)[0];
@@ -74,6 +75,9 @@ function renderData(data) {
 
       // Append price to the form
       document.querySelector("#prix").value = intl.format(price.total);
+
+      // update rebrique de prix
+      rebriquePrix.value = printableText(vehicleData);
     }
   });
 
@@ -81,19 +85,21 @@ function renderData(data) {
   moteur.addEventListener("change", (event) => {
     if (event.target.value == "--") {
       // Remove previous moteur price
-      if (price.moteur != 0) price.total -= price.moteur;
+      if (price.moteur != 0) {
+        price.total -= price.moteur;
+        price.moteur = 0;
+      }
       // reset price to total
       document.querySelector("#prix").value = intl.format(
         price.total * jours.value
       );
     } else {
       // Calculate price with moteur
-      if (price.moteur == 0)
-        price.moteur = price.net * moteurTTC[event.target.value];
-      else {
+      if (price.moteur != 0) {
         price.total -= price.moteur;
-        price.moteur = price.net * moteurTTC[event.target.value];
+        price.moteur = 0;
       }
+      price.moteur = price.net * moteurTTC[event.target.value];
       // Add moteur price to total
       price.total = price.total + price.moteur;
 
@@ -102,6 +108,8 @@ function renderData(data) {
         price.total * jours.value
       );
     }
+    // update rebrique de prix
+    rebriquePrix.value = printableText(vehicleData);
   });
 
   jours.addEventListener("change", (event) => {
@@ -109,29 +117,41 @@ function renderData(data) {
     document.querySelector("#prix").value = intl.format(
       price.total * event.target.value
     );
+
+    // update rebrique de prix
+    rebriquePrix.value = printableText(vehicleData);
   });
 
   printButton.addEventListener("click", () => {
-    const rebriquePrix = document.querySelector("#rebriquePrix");
-
     // Hide non printable elements
     document.querySelectorAll(".nonPrintable").forEach((e) => {
-      e.style.display = "none";
+      e.style.visibility = "hidden";
     });
-    rebriquePrix.value = printableText(vehicleData, price, jours.value);
 
     // Print page
     window.print();
 
     // Reset layout
     document.querySelectorAll(".nonPrintable").forEach((e) => {
-      e.style.display = "block";
+      e.style.visibility = "visible";
     });
   });
 }
 
-function printableText(vehicleData, price, jours) {
+function printableText(vehicleData) {
   intl = new Intl.NumberFormat("fr-FR", { style: "currency", currency: "EUR" });
-  let text = `Selected Vehicle: ${vehicleData.type}\n+${intl.format(vehicleData.tarif)}\nSelected BAV:\n${vehicleData.bav == "auto" ? "Automatique +19%" : "Manuelle +0%"}\nPrix sans Moteur: ${intl.format(price.net)}\nMoteur: ${price.moteur != 0 ? "+" + intl.format(price.moteur) : ""}\nJours: ${jours}\nPrix Total: ${intl.format(price.total * jours)}`;
+  let text = `Selected Vehicle: ${vehicleData.type}\n+${intl.format(
+    vehicleData.tarif
+  )}\nSelected BAV: ${
+    vehicleData.bav == "auto" ? "+19%" : "+0%"
+  }\nPrix sans Moteur: ${intl.format(price.net)}\n${
+    price.moteur != 0 ? "Moteur: +" + intl.format(price.moteur) + "\n" : ""
+  }${
+    price.moteur != 0
+      ? "Prix avec Moteur: " + intl.format(price.net + price.moteur) + "\n"
+      : ""
+  }Jours: ${jours.value}\nPrix Total: ${intl.format(
+    price.total * jours.value
+  )}`;
   return text;
 }
