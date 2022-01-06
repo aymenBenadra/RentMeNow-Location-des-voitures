@@ -61,62 +61,75 @@
           We will help you to find the best price for you.
         </p>
         <form id="reservation-form" data-netlify="true">
-          <div class="form-left">
+          <div class="form-header nonPrintable">
             <div class="form-group">
-              <label for="vehicles">Vehicles</label>
-              <select id="vehicles" name="vehicles" autofocus required>
-                <option value="--">Select a vehicle</option>
-                <option value="moto">Moto</option>
-                <option value="citadine">Citadine</option>
-                <option value="compact">Compact</option>
-                <option value="berline">Berline</option>
-                <option value="utilitaire">Utilitaire</option>
-                <option value="chantier">Engin de Chantier</option>
-                <option value="camion">Camion</option>
-              </select>
+              <label for="name">Name</label>
+              <input id="name" type="text" name="name" placeholder="Enter your name" required>
             </div>
             <div class="form-group">
-              <fieldset>
-                <legend>Boite de Vitesse</legend>
-                <div class="checkbox">
-                  <input id="manuelle" type="checkbox" name="bav" value="manuelle" disabled>
-                  <label for="manuelle">Manuelle</label>
-                </div>
-                <div class="checkbox">
-                  <input id="auto" type="checkbox" name="bav" value="auto" disabled>
-                  <label for="auto">Automatique</label>
-                </div>
-              </fieldset>
-            </div>
-            <div class="form-group">
-              <label for="moteur">Moteur</label>
-              <select id="moteur" name="moteur" autofocus>
-                <option value="--">Select a moteur</option>
-                <option value="electrique" disabled>Electrique</option>
-                <option value="hybride" disabled>Hybride</option>
-                <option value="essence" disabled>Essence</option>
-                <option value="diesel" disabled>Diesel</option>
-              </select>
-            </div>
-            <div class="form-group"> 
-              <label for="jours">Number des jours</label>
-              <input id="jours" type="number" name="jours" min="1" max="365" value="1" disabled required>
+              <label for="email">Email</label>
+              <input id="email" type="email" name="email" placeholder="Enter your email" required>
             </div>
           </div>
-          <div class="form-right">
-            <div class="form-group printable">
-              <label for="rebriquePrix">Rebrique de Prix</label>
-              <textarea id="rebriquePrix" cols="30" rows="8" disabled> </textarea>
+          <div class="form-content">
+            <div class="form-left">
+              <div class="form-group">
+                <label for="vehicles">Vehicles</label>
+                <select id="vehicles" name="vehicles" autofocus required>
+                  <option value="--">Select a vehicle</option>
+                  <option value="moto">Moto</option>
+                  <option value="citadine">Citadine</option>
+                  <option value="compact">Compact</option>
+                  <option value="berline">Berline</option>
+                  <option value="utilitaire">Utilitaire</option>
+                  <option value="chantier">Engin de Chantier</option>
+                  <option value="camion">Camion</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <fieldset>
+                  <legend>Boite de Vitesse</legend>
+                  <div class="checkbox">
+                    <input id="manuelle" type="checkbox" name="bav" value="manuelle" disabled>
+                    <label for="manuelle">Manuelle</label>
+                  </div>
+                  <div class="checkbox">
+                    <input id="auto" type="checkbox" name="bav" value="auto" disabled>
+                    <label for="auto">Automatique</label>
+                  </div>
+                </fieldset>
+              </div>
+              <div class="form-group">
+                <label for="moteur">Moteur</label>
+                <select id="moteur" name="moteur" autofocus>
+                  <option value="--">Select a moteur</option>
+                  <option value="electrique" disabled>Electrique</option>
+                  <option value="hybride" disabled>Hybride</option>
+                  <option value="essence" disabled>Essence</option>
+                  <option value="diesel" disabled>Diesel</option>
+                </select>
+              </div>
+              <div class="form-group"> 
+                <label for="jours">Number des jours</label>
+                <input id="jours" type="number" name="jours" min="1" max="365" value="1" disabled required>
+              </div>
             </div>
-            <div class="form-group prix">
-              <label for="prix">Estimation prix</label>
-              <div class="input-group">
-                <input id="prix" type="text" name="phone" placeholder="0,00" disabled><span>€</span>
+            <div class="form-right">
+              <div class="form-group printable">
+                <label for="rebriquePrix">Rebrique de Prix</label>
+                <textarea id="rebriquePrix" cols="30" rows="8" disabled> </textarea>
+              </div>
+              <div class="form-group prix">
+                <label for="prix">Estimation prix</label>
+                <div class="input-group">
+                  <input id="prix" type="text" name="phone" placeholder="0,00" disabled><span>€</span>
+                </div>
               </div>
             </div>
           </div>
-          <div class="form-group nonPrintable">
+          <div class="form-footer form-group nonPrintable">
             <button id="print" type="button" disabled>Print the bill</button>
+            <button id="send" type="submit" disabled>Send bill to us for traiting</button>
           </div>
         </form>
       </section>

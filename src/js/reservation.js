@@ -37,6 +37,9 @@ function renderData(data) {
       jours.disabled = true;
       printButton.disabled = true;
       rebriquePrix.value = "";
+      price.net = 0;
+      price.moteur = 0;
+      price.total = 0;
     } else {
       // Find selected vehicle data
       vehicleData = vehiclesData.filter((v) => v.type == event.target.value)[0];
@@ -51,24 +54,40 @@ function renderData(data) {
       moteurOptions[0].selected = true;
 
       // Disable unavailable Moteurs
+      // if (vehicleData.moteur.length > 1) {
       moteurOptions.forEach((o) => {
         console.log(o.disabled);
         if (vehicleData.moteur.includes(o.value) || o.value == "--")
           o.disabled = false;
         else o.disabled = true;
       });
+      // } else {
+      //   moteurOptions.forEach((o) => {
+      //     console.log(o.disabled);
+      //     if (vehicleData.moteur.includes(o.value)) {
+      //       o.disabled = false;
+      //       // o.selected = true;
+      //     } else o.disabled = true;
+      //   });
+      // }
 
       // Enable jours
       jours.disabled = false;
-
-      // Enable print button
-      printButton.disabled = false;
 
       // Calculate price without moteur
       price.net =
         vehicleData.bav == "auto"
           ? vehicleData.tarif + vehicleData.tarif * 0.19
           : vehicleData.tarif;
+
+      // Calculate price with moteur
+      // if (price.moteur != 0) {
+      //   price.total -= price.moteur;
+      //   price.moteur = 0;
+      // }
+      // price.moteur = price.net * moteurTTC[moteur.value];
+      // Add moteur price to total
+      price.total = price.total + price.moteur;
 
       // multiply price by jours
       price.total = price.net * jours.value;
@@ -89,6 +108,13 @@ function renderData(data) {
         price.total -= price.moteur;
         price.moteur = 0;
       }
+
+      // Enable print button
+      printButton.disabled = true;
+
+      // Enable send button
+      document.querySelector("#send").disabled = true;
+
       // reset price to total
       document.querySelector("#prix").value = intl.format(
         price.total * jours.value
@@ -102,6 +128,12 @@ function renderData(data) {
       price.moteur = price.net * moteurTTC[event.target.value];
       // Add moteur price to total
       price.total = price.total + price.moteur;
+
+      // Enable print button
+      printButton.disabled = false;
+
+      // Enable send button
+      document.querySelector("#send").disabled = false;
 
       // Append price to the form
       document.querySelector("#prix").value = intl.format(

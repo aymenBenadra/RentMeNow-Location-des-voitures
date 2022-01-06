@@ -17,49 +17,58 @@ block content
             | Calculate how much you have to pay for an awesome car or motorcycle.
             | We will help you to find the best price for you.
         form#reservation-form(data-netlify='true')
-            .form-left
+            .form-header.nonPrintable
                 .form-group
-                    label(for='vehicles') Vehicles
-                    select#vehicles(name='vehicles' autofocus required)
-                        option(value='--') Select a vehicle
-                        option(value='moto') Moto
-                        option(value='citadine') Citadine
-                        option(value='compact') Compact
-                        option(value='berline') Berline
-                        option(value='utilitaire') Utilitaire
-                        option(value='chantier') Engin de Chantier
-                        option(value='camion') Camion
+                    label(for='name') Name
+                    input#name(type='text' name='name' placeholder='Enter your name' required)
                 .form-group
-                    fieldset
-                        legend Boite de Vitesse
-                        .checkbox
-                            input#manuelle(type='checkbox' name='bav' value='manuelle' disabled)
-                            label(for='manuelle') Manuelle
-                        .checkbox
-                            input#auto(type='checkbox' name='bav' value='auto' disabled)
-                            label(for='auto') Automatique
-                .form-group
-                    label(for='moteur') Moteur
-                    select#moteur(name='moteur' autofocus)
-                        option(value='--') Select a moteur
-                        option(value='electrique' disabled) Electrique
-                        option(value='hybride' disabled) Hybride
-                        option(value='essence' disabled) Essence
-                        option(value='diesel' disabled) Diesel
-                .form-group 
-                    label(for='jours') Number des jours
-                    input#jours(type='number' name='jours' min='1' max='365' value="1" disabled required)
-            .form-right
-                .form-group.printable
-                    label(for='rebriquePrix') Rebrique de Prix
-                    textarea#rebriquePrix(cols="30", rows="8" disabled) 
-                .form-group.prix
-                    label(for='prix') Estimation prix
-                    .input-group
-                        input#prix(type='text' name='phone' placeholder='0,00' disabled)
-                        span €
-            .form-group.nonPrintable
+                    label(for='email') Email
+                    input#email(type='email' name='email' placeholder='Enter your email' required)
+            .form-content
+                .form-left
+                    .form-group
+                        label(for='vehicles') Vehicles
+                        select#vehicles(name='vehicles' autofocus required)
+                            option(value='--') Select a vehicle
+                            option(value='moto') Moto
+                            option(value='citadine') Citadine
+                            option(value='compact') Compact
+                            option(value='berline') Berline
+                            option(value='utilitaire') Utilitaire
+                            option(value='chantier') Engin de Chantier
+                            option(value='camion') Camion
+                    .form-group
+                        fieldset
+                            legend Boite de Vitesse
+                            .checkbox
+                                input#manuelle(type='checkbox' name='bav' value='manuelle' disabled)
+                                label(for='manuelle') Manuelle
+                            .checkbox
+                                input#auto(type='checkbox' name='bav' value='auto' disabled)
+                                label(for='auto') Automatique
+                    .form-group
+                        label(for='moteur') Moteur
+                        select#moteur(name='moteur' autofocus)
+                            option(value='--') Select a moteur
+                            option(value='electrique' disabled) Electrique
+                            option(value='hybride' disabled) Hybride
+                            option(value='essence' disabled) Essence
+                            option(value='diesel' disabled) Diesel
+                    .form-group 
+                        label(for='jours') Number des jours
+                        input#jours(type='number' name='jours' min='1' max='365' value="1" disabled required)
+                .form-right
+                    .form-group.printable
+                        label(for='rebriquePrix') Rebrique de Prix
+                        textarea#rebriquePrix(cols="30", rows="8" disabled) 
+                    .form-group.prix
+                        label(for='prix') Estimation prix
+                        .input-group
+                            input#prix(type='text' name='phone' placeholder='0,00' disabled)
+                            span €
+            .form-footer.form-group.nonPrintable
                 button#print(type='button' disabled) Print the bill
+                button#send(type='submit' disabled) Send bill to us for traiting
 
 block active-footer
     li
