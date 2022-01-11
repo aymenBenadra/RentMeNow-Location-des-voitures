@@ -6,13 +6,13 @@ html(lang='en')
         meta(name='viewport' content='width=device-width, initial-scale=1.0')
         link(rel='stylesheet' href='./css/style.min.css')
 
-        include ./partials/favicon.pug
-        include ./partials/seo.pug
+        include ./_partials/favicon.pug
+        include ./_partials/seo.pug
     body
-        include ./partials/header.pug
+        include ./_partials/header.pug
         main
             block content
         
-        include ./partials/footer.pug
+        include ./_partials/footer.pug
 
         block scripts

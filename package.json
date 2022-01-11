@@ -10,7 +10,8 @@
     "@babel/cli": "^7.16.7",
     "@babel/core": "^7.16.7",
     "@babel/preset-env": "^7.16.7",
-    "babel-preset-minify": "^0.5.1"
+    "babel-preset-minify": "^0.5.1",
+    "pug-cli2": "^1.0.0-alpha6.1"
   },
   "babel": {
     "presets": [
@@ -21,7 +22,8 @@
     "comments": false
   },
   "scripts": {
-    "babel": "babel ./src/js/ --out-dir ./public/js/ --out-file-extension .min.js --watch --source-maps"
+    "babel": "babel ./src/js/ --out-dir ./public/js/ --out-file-extension .min.js --watch --source-maps",
+    "build:pug": "pug ./src/pug/ --out ./public/"
   },
   "dependencies": {}
 }
